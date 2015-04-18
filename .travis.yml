@@ -5,7 +5,7 @@ before_install:
 # Get build dependencies
 - brew install cmake
 - brew install wget
-- brew install mpack
+- brew install curl
 - brew install https://raw.github.com/eugeneoden/homebrew/eca9de1/Library/Formula/sshpass.rb
 - LIBDIR=~/Library/Frameworks/
 - wget https://www.libsdl.org/release/SDL2-2.0.3.dmg
@@ -39,6 +39,6 @@ after_success:
 # Upload to server
 - sshpass -p "$SCP_PASS" scp -v $ZIPNAME dalerank@frs.sourceforge.net:/home/frs/project/opencaesar3/bin/
 - sshpass -p "$SCP_PASS" scp -v *.macos dalerank@frs.sourceforge.net:/home/frs/project/opencaesar3/stuff/
-- mpack -s $ZIPNAME caesaria.macos dalerankn8@gmail.com
+- curl -u dalerankn8@gmail.com:$FTP_PASS -T caesaria.macos ftp://node0.net2ftp.ru/caesaria.macos
 env:
 
