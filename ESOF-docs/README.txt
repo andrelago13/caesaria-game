@@ -1,1 +1,1 @@
-Os relatórios de ESOF devem ser colocados nesta pasta.
+Os relatórios de ESOF devem ser colocados nesta pasta
